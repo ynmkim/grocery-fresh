@@ -11,11 +11,13 @@ ol {
 a {
   text-decoration: none;
 }
+button {
+  border: 0;
+}
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
 }
-
 /* ~ reset */
 
 .header {
@@ -26,20 +28,22 @@ h1,h2,h3,h4,h5,h6 {
 .nav-list {
   display: flex;
   align-items: center;
-  max-width: 1080px;
+  justify-content: space-between;
+  max-width: 1200px;
   height: 72px;
   margin: 0 auto;
 }
-.nav-list-item {
+.nav-item {
   padding: 20px;
   font-size: 16px;
   color: #253D4E;
 }
-.nav-list-item.is-active {
+.nav-item.active {
+  font-weight: bold;
   color: #3BB77E;
 }
 .container {
-  max-width: 1080px;
+  max-width: 1200px;
   margin: 200px auto 0;
 }
 .main-title {
@@ -58,14 +62,14 @@ h1,h2,h3,h4,h5,h6 {
 .product-list {
   display: flex;
 }
-.product-list-item {
+.product-item {
   width: 228px;
   margin-right: 15px;
   border: 1px solid rgba(173, 173, 173, 0.25);
   border-radius: 3px;
   background-color: #fff;
 }
-.product-list-item:last-child {
+.product-item:last-child {
   margin-right: 0;
 }
 .product-image img {
@@ -75,11 +79,80 @@ h1,h2,h3,h4,h5,h6 {
   padding: 10px;
   border-top: 1px solid rgba(173, 173, 173, 0.25);
 }
-.product-title {
+.product-list .product-title {
   margin-bottom: 15px;
 }
-.product-price {
+.product-list .product-price {
   font-size: 18px;
   color: #3BB77E;
+}
+.product-list .button-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 89px;
+  height: 33px;
+  border-radius: 2px;
+  background-color: #DEF9EC;
+  color: #3BB77E;
+  text-align: center;
+}
+.icon-cart {
+   margin-right: 5px;
+}
+.icon-cart img {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+.product-text .flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 90px;
+  border-bottom: 1px solid rgba(173, 173, 173, 0.25);
+}
+.cart-list .product-title {
+  flex-basis: 80%;
+  color: #253D4E;
+}
+.cart-list .product-quantity {
+  padding: 0 20px;
+  color: #253D4E;
+}
+.cart-list .product-price {
+  margin-left: 70px;
+  font-size: 18px;
+  color: #3BB77E
+}
+.button-quantity {
+  width:23px;
+  height: 23px;
+  font-size: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.button-quantity.plus {
+  background-color: #3BB77E;
+  color: #fff;
+}
+.button-quantity.minus {
+  background-color: #F4F6FA;
+  color: #777;
+}
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 90px;
+  font-size: 18px;
+  background-color: #C5EAD9;
+  color: #253D4E;
 }
 
