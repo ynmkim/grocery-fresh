@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// import styles from '../styles/Product.module.css';
 
 export default function Products() {
   let productName = ['Redish', 'Potatos', 'Tomatos', 'Broccoli', 'Green Beans'];
@@ -14,7 +13,7 @@ export default function Products() {
           {
             productName.map((name, i) => { 
               return (
-                <li className="product-item">
+                <li className="product-item" key={i}>
                 <div className="product-image">
                     <img src={`/image_product_${i}.png`}/>
                 </div>
