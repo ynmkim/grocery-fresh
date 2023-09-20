@@ -19,10 +19,14 @@ export default function ProductList() {
     { name: 'Green Beans', price: 1, amount: 3000 }
   ]
 
-  // let amountGram = productData[i].amount;
+  
 
-  // if (1000 < productData[i].amount > 10000) {
-  //    productData[i].amount = amountGram / 1000
+  // 먄약에 productData[i].amount 값이 1000 작으면 + 'g', 1000 이상 10000 미만이면  productData[i].amount 값 / 1000 +'kg'
+
+  // if (productData[i].amount < 1000) {
+  //   productData[i].amount + 'g'
+  // } else if (1000 < productData[i].amount > 10000) {
+  //   productData[i].amount + 'kg'
   // }
 
 
@@ -36,6 +40,7 @@ export default function ProductList() {
         spaceBetween={15}
         slidesPerView={5}
         navigation
+        // navigation={1200 > 768 ? true : false}
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
         style={{
@@ -46,17 +51,23 @@ export default function ProductList() {
             width: 957,
             slidesPerView: 4,
           },
+          768: {
+            navigation: { enabled: false }
+          },
           714: {
             width: 714,
-            slidesPerView: 3,
+            slidesPerView: 3, 
+            navigation: { enabled: false }
           },
           471: {
             width: 471,
             slidesPerView: 2,
+            navigation: { enabled: false }
           },
           228: {
             width: 228,
             slidesPerView: 1,
+            navigation: { enabled: false }
           },
         }}
       >
@@ -69,7 +80,16 @@ export default function ProductList() {
                       <img src={`/image_product_${i}.png`} />
                   </div>
                     <div className="product-text">
-                      <h4 className="product-title">{productData[i].name} {productData[i].amount}</h4>
+                    <h4 className="product-title">
+                      {productData[i].name} {
+                        productData[i].amount < 1000
+                        ? productData[i].amount + 'g'
+                        : ( 1000 <= productData[i].amount > 10000 
+                            ? productData[i].amount / 1000 + 'kg'
+                            : productData[i].amount / 1000 + 'kg'
+                          )
+                      }
+                    </h4>
                       <div className="flex-row">
                         <strong className="product-price">${productData[i].price}</strong>
                         <Link className="button-cart" href="/cart">
