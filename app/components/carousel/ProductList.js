@@ -19,19 +19,15 @@ export default function ProductList() {
     { name: 'Green Beans', price: 1, amount: 3000 }
   ]
 
-  
-
   // 먄약에 productData[i].amount 값이 1000 작으면 + 'g', 1000 이상 10000 미만이면  productData[i].amount 값 / 1000 +'kg'
+  // 킬로그램 = 그램 나누기 1000
+  // 그램 = 킬로그램 곱하기 1000
 
   // if (productData[i].amount < 1000) {
   //   productData[i].amount + 'g'
   // } else if (1000 < productData[i].amount > 10000) {
   //   productData[i].amount + 'kg'
   // }
-
-
-  // 킬로그램 = 그램 나누기 1000
-  // 그램 = 킬로그램 곱하기 1000
   
   return (
     <ul className="product-list">
@@ -86,7 +82,7 @@ export default function ProductList() {
                         ? productData[i].amount + 'g'
                         : ( 1000 <= productData[i].amount > 10000 
                             ? productData[i].amount / 1000 + 'kg'
-                            : productData[i].amount / 1000 + 'kg'
+                            : productData[i].amount / 1000 + 'kg' // 이렇게 중복 삼항자말고 if문을 써서 할 수 없을까?
                           )
                       }
                     </h4>
