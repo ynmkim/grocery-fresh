@@ -10,10 +10,13 @@ export default function Cart() { // 부모 컨포넌트
       <div className="container">
         <h3 className="sub-title">Cart</h3>
         <ul className="cart-list">
-          <CartItem productName={ cart[0] }/>
-          <CartItem productName={ cart[1] }/>
-          <CartItem productName={ cart[2] }/>
-          <CartItem productName={ cart[3] }/>
+          {
+            cart.map((k, i) => {
+              return (
+                <CartItem productName={cart[i]} key={i} />
+              )
+            })
+          }
           <Banner discount="60" />
         </ul>
       </div>
