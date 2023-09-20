@@ -13,6 +13,7 @@ a {
 }
 button {
   border: 0;
+  padding: 0;
 }
 h1,h2,h3,h4,h5,h6 {
   margin: 0;
@@ -192,8 +193,6 @@ h1,h2,h3,h4,h5,h6 {
   background: #F2F3F4 url("../public/icon_arrow_left.png") no-repeat 50% 50%;
   background-size: 24px 24px;
 }
-
-
 @media screen and (max-width: 1200px) {
   .container {
     padding: 0 15px;
