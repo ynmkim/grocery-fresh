@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import ProductList from '../components/carousel/ProductList';
 
 export default function Products() {
