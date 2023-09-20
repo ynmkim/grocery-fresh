@@ -31,7 +31,11 @@ function CartItem(props) { // 자식 컨포넌트
     <li className="cart-item">
       <h4 className="product-title">{props.productName} 500g</h4>
       <div className="product-quantity">
-        <button className="button-quantity minus" onClick={() => { quantityChange(quantity - 1) }}>-</button>
+        <button className="button-quantity minus" onClick={() => {
+          quantity !== 0
+          ? quantityChange(quantity - 1)
+          : null
+        }}>-</button>
         <strong className="quantity">{ quantity }</strong>
         <button className="button-quantity plus" onClick={() => { quantityChange(quantity + 1) }}>+</button>
       </div>
