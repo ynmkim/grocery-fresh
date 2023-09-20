@@ -63,10 +63,10 @@ export default function ProductList() {
         {
           productData.map((k, i) => {
             return (
-              <SwiperSlide>
-                <li className="product-item" key={i}>
+              <SwiperSlide key={i}>
+                <li className="product-item">
                   <div className="product-image">
-                      <img src={`/image_product_${i}.png`}/>
+                      <img src={`/image_product_${i}.png`} />
                   </div>
                     <div className="product-text">
                       <h4 className="product-title">{productData[i].name} {productData[i].amount}</h4>
